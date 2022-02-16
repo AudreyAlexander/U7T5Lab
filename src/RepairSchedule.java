@@ -47,14 +47,15 @@ public class RepairSchedule
         ArrayList<Integer> returnList = new ArrayList<Integer>();
         int count = 0;
         for (int i = 0; i < numberOfMechanics; i++){
-            for (CarRepair car : schedule){
-                if (car.getMechanicNum() == i){
-                    count ++;
+            for (CarRepair car : schedule) {
+                if (car.getMechanicNum() == i) {
+                    count++;
                 }
             }
-
+            if (count == 0) {
+                returnList.add(i);
+            }
         }
-
         return returnList;
     }
 
